@@ -1,10 +1,27 @@
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
+// eslint-disable-next-line no-restricted-syntax
+import { FiltersModal } from '@/components/FiltersModal/FiltersModal.tsx'
+
 export const App = () => {
+	const { t } = useTranslation()
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [filters, setFilters] = useState({})
 	return (
-		<section className="w-full h-dvh flex items-center justify-center">
-			{/* eslint-disable-next-line i18next/no-literal-string */}
-			<h1 className="text-6xl text-gray-600 mb-12">
-				WinWinTravel frontend test task
-			</h1>
+		<section className="w-full h-dvh flex items-center justify-center ">
+			<FiltersModal
+				isOpen={isModalOpen}
+				onClose={() => setIsModalOpen(false)}
+				onApply={setFilters}
+				currentFilters={filters}
+			/>
+			<button
+				onClick={() => setIsModalOpen(true)}
+				className="text-6xl text-gray-600 mb-12 cursor-pointer"
+			>
+				{t('Open Modal')}
+			</button>
 		</section>
 	)
 }

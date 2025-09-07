@@ -1,0 +1,100 @@
+.modal-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 16px 32px;
+}
+
+.modal-button-apply {
+    grid-column: 2;
+    justify-self: center;
+    background-color: #FF5F00;
+    max-width: 280px;
+    width: 100%;
+    height: 64px;
+    border-radius: 16px;
+    padding: 26px 70px;
+    opacity: 1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.modal-button-apply:hover {
+    background-color: #e05500;
+    transform: translateY(-2px);
+}
+.modal-button-old {
+    justify-self: center;
+    background-color: transparent;
+    max-width: 280px;
+    width: 100%;
+    height: 64px;
+    border-radius: 16px;
+    padding: 26px 70px;
+    opacity: 1;
+    color: #474747;
+    border: 1px solid #B4B4B4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.modal-button-old:hover {
+    transform: translateY(-2px);
+}
+.modal-clear-button {
+    grid-column: 3;
+    justify-self: end;
+    font-family: Inter, sans-serif;
+    color: #078691;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.modal-clear-button:hover {
+    color: #056c74;
+    text-decoration: none;
+}
+.modal-section-container {
+    margin-bottom: 40px;
+}
+
+.options-grid {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    border-bottom: 2px solid #B4B4B4;
+}
+.modal-name-filter{
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    weight: 500;
+    color: #31393C;
+}
+.modal-name-option{
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    weight: 400;
+    color: #31393C;
+}
