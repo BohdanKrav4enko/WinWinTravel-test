@@ -1,8 +1,6 @@
-// eslint-disable-next-line no-restricted-syntax
 import { FiltersModalUI } from '@/components/FiltersModal/ui/FiltersModalUI.tsx'
-// eslint-disable-next-line no-restricted-syntax
-import { useFiltersModal } from '@/components/hooks/useFiltersModal.ts.tsx'
-import { FiltersModalProps } from '@/shared/api/types/Filter/FilterType.ts'
+import { useFiltersModal } from '@/components/hooks/useFiltersModal.tsx'
+import { FiltersModalProps } from '@/shared/api/types/Filter/FilterType'
 
 export const FiltersModal = (props: FiltersModalProps) => {
 	const logic = useFiltersModal(

@@ -1,10 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
-// eslint-disable-next-line no-restricted-syntax
 import '@/components/FiltersModal/ui/FiltersModalStyle.css'
-// eslint-disable-next-line no-restricted-syntax
 import { FiltersModalWarning } from '@/components/FiltersModalWarning/FiltersModalWarning'
-// eslint-disable-next-line no-restricted-syntax
 import { Modal } from '@/components/modal'
 import { FiltersModalProps } from '@/shared/api/types/Filter/FilterType.ts'
 import filterData from '@/shared/temp/filterData.json'
@@ -18,21 +15,17 @@ type FiltersModalUIProps = FiltersModalProps & {
 	handleApply: () => void
 	handleClose: () => void
 	applyNew: () => void
-	cancelApply: () => void
 }
 
 export const FiltersModalUI = ({
 	isOpen,
-	onClose,
 	tempFilters,
 	warning,
-	setWarning,
 	handleOptionChange,
 	clearFilters,
 	handleApply,
 	handleClose,
-	applyNew,
-	cancelApply
+	applyNew
 }: FiltersModalUIProps) => {
 	const { t } = useTranslation()
 
@@ -40,7 +33,7 @@ export const FiltersModalUI = ({
 		<>
 			<Modal
 				isOpen={isOpen}
-				onClose={handleClose}
+				handleClose={handleClose}
 				title={t('Filter')}
 				actions={
 					<div className="modal-footer">
@@ -88,11 +81,7 @@ export const FiltersModalUI = ({
 
 			{warning && (
 				<FiltersModalWarning
-					cancelApply={cancelApply}
-					onClose={() => {
-						setWarning(false)
-						onClose()
-					}}
+					handleClose={handleClose}
 					onApplyNew={applyNew}
 				/>
 			)}

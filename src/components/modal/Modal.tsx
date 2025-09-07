@@ -2,7 +2,7 @@ import './Modal.css'
 
 type ModalProps = {
 	isOpen: boolean
-	onClose: () => void
+	handleClose: () => void
 	title?: string
 	children: React.ReactNode
 	actions?: React.ReactNode
@@ -10,7 +10,7 @@ type ModalProps = {
 
 export const Modal = ({
 	isOpen,
-	onClose,
+	handleClose,
 	title,
 	children,
 	actions
@@ -22,7 +22,7 @@ export const Modal = ({
 	return (
 		<div
 			className="modal-overlay"
-			onClick={onClose}
+			onClick={handleClose}
 		>
 			<div
 				className="modal-content"
@@ -38,7 +38,7 @@ export const Modal = ({
 				{children}
 				{actions && <div className="modal-actions">{actions}</div>}
 				<button
-					onClick={onClose}
+					onClick={handleClose}
 					className="modal-close"
 				>
 					×

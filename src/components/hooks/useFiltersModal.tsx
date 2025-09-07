@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { Filters } from '@/shared/api/types/Filter/FilterType.ts'
 
@@ -9,11 +9,6 @@ export const useFiltersModal = (
 ) => {
 	const [tempFilters, setTempFilters] = useState<Filters>({})
 	const [warning, setWarning] = useState(false)
-
-	useEffect(() => {
-		setTempFilters({ ...currentFilters })
-	}, [currentFilters])
-
 	const handleOptionChange = (filterId: string, optionId: string) => {
 		setTempFilters(prev => {
 			const currentOptions = prev[filterId] || []
@@ -47,12 +42,9 @@ export const useFiltersModal = (
 		onClose()
 	}
 
-	const cancelApply = () => {
-		setWarning(false)
-	}
-
 	const handleClose = () => {
 		setTempFilters({ ...currentFilters })
+		setWarning(false)
 		onClose()
 	}
 
@@ -64,7 +56,6 @@ export const useFiltersModal = (
 		handleApply,
 		handleClose,
 		applyNew,
-		cancelApply,
 		setWarning
 	}
 }

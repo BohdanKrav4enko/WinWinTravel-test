@@ -1,25 +1,22 @@
 import { useTranslation } from 'react-i18next'
 
-// eslint-disable-next-line no-restricted-syntax
 import { Modal } from '@/components/modal'
 
 type FiltersModalWarningProps = {
-	onClose: () => void
 	onApplyNew: () => void
-	cancelApply: () => void
+	handleClose: () => void
 }
 
 export const FiltersModalWarning = ({
-	onClose,
 	onApplyNew,
-	cancelApply
+	handleClose
 }: FiltersModalWarningProps) => {
 	const { t } = useTranslation()
 
 	return (
 		<Modal
 			isOpen={true}
-			onClose={onClose}
+			handleClose={handleClose}
 		>
 			<p className={'modal-title'}>{t('Do you want to apply new filters?')}</p>
 			<div
@@ -38,7 +35,7 @@ export const FiltersModalWarning = ({
 				</button>
 				<button
 					className="modal-button-old"
-					onClick={cancelApply}
+					onClick={handleClose}
 				>
 					{t('Keep old filters')}
 				</button>

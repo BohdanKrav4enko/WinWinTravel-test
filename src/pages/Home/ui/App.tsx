@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-// eslint-disable-next-line no-restricted-syntax
 import { FiltersModal } from '@/components/FiltersModal/FiltersModal.tsx'
 
 export const App = () => {
