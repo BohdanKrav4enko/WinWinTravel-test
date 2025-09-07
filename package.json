@@ -14,11 +14,14 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"test": "vitest",
-		"coverage": "vitest run --coverage"
+		"coverage": "vitest run --coverage",
+		"predeploy": "pnpm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^5.74.3",
 		"date-fns": "^2.30.0",
+		"gh-pages": "^6.3.0",
 		"i18next": "^23.16.8",
 		"immer": "^10.1.1",
 		"react": "^19.1.0",

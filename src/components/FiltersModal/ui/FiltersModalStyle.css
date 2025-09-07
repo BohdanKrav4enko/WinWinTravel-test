@@ -89,12 +89,12 @@
 .modal-name-filter{
     font-family: Inter, sans-serif;
     font-size: 24px;
-    weight: 500;
+    font-weight: 500;
     color: #31393C;
 }
 .modal-name-option{
     font-family: Inter, sans-serif;
     font-size: 16px;
-    weight: 400;
+    font-weight: 400;
     color: #31393C;
 }
